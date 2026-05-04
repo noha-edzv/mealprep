@@ -1,0 +1,24 @@
+{
+  "name": "MealPrep — Bureau culinaire",
+  "short_name": "MealPrep",
+  "description": "Planifie tes repas, gère ton placard et ta liste de courses.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8F0E0",
+  "theme_color": "#F8F0E0",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
