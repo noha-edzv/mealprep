@@ -1,4 +1,4 @@
-const CACHE = 'mealprep-v1';
+const CACHE = 'mealprep-v2';
 const ASSETS = ['/', '/manifest.json', '/sw.js'];
 
 self.addEventListener('install', e => {
