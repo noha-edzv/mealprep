@@ -1328,8 +1328,10 @@ async function handleFridgePhoto(event){
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({image:base64,mimeType})
     });
-    const data=await resp.json();
-    if(!resp.ok)throw new Error(data.error||'Erreur serveur');
+    const rawText=await resp.text();
+    let data;
+    try{data=JSON.parse(rawText);}catch{throw new Error('Erreur serveur ('+resp.status+'): '+rawText.slice(0,120));}
+    if(!resp.ok)throw new Error(data.error||'Erreur serveur '+resp.status);
     if(!data.ingredients?.length)throw new Error('Aucun aliment détecté — essaie une meilleure photo !');
     const list=document.getElementById('scan-results-list');
     list.innerHTML=data.ingredients.map((name,i)=>`
